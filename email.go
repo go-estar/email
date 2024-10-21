@@ -51,10 +51,10 @@ func (e *Email) SendToMany(to []string, title string, body string, opts ...Optio
 
 	if err != nil {
 		e.Logger.Error("",
-			e.Logger.Field("to", to),
-			e.Logger.Field("title", title),
-			e.Logger.Field("body", body),
-			e.Logger.Field("err", err),
+			logger.NewField("to", to),
+			logger.NewField("title", title),
+			logger.NewField("body", body),
+			logger.NewField("err", err),
 		)
 	}
 	return err
